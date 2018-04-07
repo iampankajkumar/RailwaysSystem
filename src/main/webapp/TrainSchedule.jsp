@@ -46,18 +46,7 @@
 </script>
 
 
-<%!Connection con = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs = null;
-
-	public void jspInit() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/train", "root", "root");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}%>
+<%@include file="connection.jsp"%>
 <!-- Input Validation Script -->
 <script type="text/javascript" src="InputValidation.js">
 	

@@ -18,19 +18,7 @@
 	type="text/css" media="screen,projection" />
 
 
-<%!Connection con = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs = null;
-
-	public void jspInit() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/train", "root", "root");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}%>
-
+<%@include file="connection.jsp"%>
 
 <script type="text/javascript">
 	//To make the values of a1, a2, a3 =0 when they are left blank so that to avoid exception of null point during parsing

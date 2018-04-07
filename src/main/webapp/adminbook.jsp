@@ -1,7 +1,3 @@
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -50,20 +46,7 @@ body {
 	margin-top: 0;
 }
 </style>
-
-
-<%!Connection con = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs = null;
-	public void jspInit() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/train", "root", "root");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}%>
-
+<%@include file="connection.jsp"%>
 <script type="text/javascript">
 	function valid() {
 		if (document.form1.date.value != "") {
